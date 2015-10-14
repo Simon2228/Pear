@@ -1,5 +1,22 @@
 extends layout
 
-block content
-  h1= title
-  p Welcome to #{title}
+block head-content
+	title Pear - Pair you up with your choice!
+
+	link(href='stylesheets/index.css', rel='stylesheet', type='text/css')
+
+block body-content
+	nav(class='navbar navbar-default navbar-fixed-top', style='background-color: rgb(230,230,230)')
+		div(class='container-fluid')
+			p(class='navbar-text') Pear - Pair you up with your choice
+
+
+	div(class='email')
+		div(class='input-group')
+			span(class='input-group-addon', style='width: 65pt') Email
+			input(type='text', class='form-control', placeholder='Enter your email')
+
+	div(class='password')
+		div(class='input-group')
+			span(class='input-group-addon') Password
+			input(type='text', class='form-control', placeholder='Enter your password') 
