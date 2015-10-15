@@ -10,13 +10,44 @@ block body-content
 		div(class='container-fluid')
 			p(class='navbar-text') Pear - Pair you up with your choice
 
+	div(class='user-info')
+		div(class='email')
+			div(class='input-group')
+				span(class='input-group-addon', style='width: 65pt') Email
+				input(type='text', class='form-control', placeholder='Enter your email')
 
-	div(class='email')
-		div(class='input-group')
-			span(class='input-group-addon', style='width: 65pt') Email
-			input(type='text', class='form-control', placeholder='Enter your email')
+		div(class='password')
+			div(class='input-group')
+				span(class='input-group-addon') Password
+				input(type='text', class='form-control', placeholder='Enter your password')
 
-	div(class='password')
-		div(class='input-group')
-			span(class='input-group-addon') Password
-			input(type='text', class='form-control', placeholder='Enter your password') 
+		div(class='options')
+			div(class='rememberme')
+				.checkbox
+					label
+						input(type='checkbox')
+						| Remember me
+
+			div(class='forgetpswd')
+				a(href='https://www.google.com') Forget paaaassword?
+
+		button(type='button', class='btn btn-default') Sign In
+
+	p(class='or') Or Use Other Accounts To Sign In
+
+	div(class='accountIcons')
+		div(class='google_icon')
+			input(type='image', id='google', src='images/google_icon.png')
+		div(class='facebook_icon')
+			input(type='image', id='facebook', src='images/facebook_icon.png')
+
+	p(id='signup') Want to sign up for an entirely new account?
+	div(style='text-align: center')
+		a(href='https://ucsd.edu') Just click me here!
+
+		
+
+
+
+
+
