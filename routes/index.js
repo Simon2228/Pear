@@ -16,10 +16,11 @@ router.get('/db', function(request, response, next){
        	console.error(err); response.send("Error " + err); }
       else
        {
-        response.send(result.rows)
+        response.send(result.rows);
+       }
     });
   }); 
-})
+});
 
 
 module.exports = router;
