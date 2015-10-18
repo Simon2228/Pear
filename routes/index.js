@@ -13,12 +13,10 @@ router.get('/db', function(request, response, next){
      	done();
       if (err)
        {
-       	console.log('error');
        	console.error(err); response.send("Error " + err); }
       else
        {
-       	console.log('not error');
-        response.render('pages/db', {results: result.rows} ); }
+        response.send({results: result.rows}}
     });
   }); 
 })
