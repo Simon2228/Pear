@@ -7,6 +7,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+/*
 router.get('/db', function(request, response, next){
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     client.query('SELECT * FROM test_table', function(err, result) {
@@ -20,7 +21,7 @@ router.get('/db', function(request, response, next){
        }
     });
   }); 
-});
+});  */
 
 
 module.exports = router;
