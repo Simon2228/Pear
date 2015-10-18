@@ -23,7 +23,8 @@
     "anonymous social network"
   ],
   "engines": {
-    "node": "0.12.7"
+    "node": "0.12.7",
+    "npm": "2.11.3"
   },
   "optionalDependencies": {
     "angular": "^1.4.7",
