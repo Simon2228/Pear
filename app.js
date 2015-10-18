@@ -62,25 +62,18 @@ app.use(function(err, req, res, next) {
 var pg = require('pg');
 
 app.get('/db', function (request, response) {
-pg.connect(process.env.DATABASE_URL || conString, function(err, client, done) {  
-  client.query('SELECT * FROM your_table', function(err, result) {
-    done();
-    if(err) return console.error(err);
-    console.log(result.rows);
-  });
-});
-})
-
-/*
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     client.query('SELECT * FROM test_table', function(err, result) {
       done();
       if (err)
        { console.error(err); response.send("Error " + err); }
       else
-       { response.render('pages/db', {results: result.rows} ); }
+       { response.render('/db', {results: result.rows} ); }
     });
-  });   */
+  }); 
+})
+
+
 
 
 module.exports = app;
