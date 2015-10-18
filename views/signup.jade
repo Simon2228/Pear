@@ -1,0 +1,38 @@
+extends layout
+
+block head-content
+	title Pear - Sign Up
+
+	link(href='stylesheets/signup.css', rel='stylesheet', type='text/css')
+
+block body-content
+	body
+		nav(class='navbar navbar-default navbar-fixed-top', style='background-color: rgb(230,230,230)')
+			div(class='container-fluid')
+				p(class='navbar-text') Pear - Pair you up with your choice
+
+
+		div(class='user-info')
+			div(class='username')
+				div(class='input-group')
+					span(class='input-group-addon', style='width: 65pt') Username
+					input(type='text', class='form-control', placeholder='Don\'t put ur real name!!')
+
+			div(class='email')
+				div(class='input-group')
+					span(class='input-group-addon', style='width: 65pt') Email
+					input(type='text', class='form-control', placeholder='Enter your email')
+
+			div(class='password')
+				div(class='input-group')
+					span(class='input-group-addon') Password
+					input(type='text', class='form-control', placeholder='Enter your password')
+
+			p(id='retype') Retype your password to confirm
+
+			div(class='password')
+				div(class='input-group', style='margin-top: 4px')
+					span(class='input-group-addon') Password
+					input(type='text', class='form-control', placeholder='Enter your password')
+
+			button(type='button', class='btn btn-default') Sign Up

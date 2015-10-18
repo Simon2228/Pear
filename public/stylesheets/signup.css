@@ -1,0 +1,30 @@
+.input-group {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  align: center;
+  position: relative;
+}
+
+.user-info {
+	margin-top: 75px;
+}
+
+.btn-default{
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  display: block;
+  display: relative;
+}
+
+
+#retype {
+	width: 85%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
