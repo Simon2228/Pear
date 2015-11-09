@@ -4,9 +4,15 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var Sequelize = require('sequelize');
+
+var passport = require('passport');
+var localStrategy = require('passport-local').Strategy;
+
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
 
 var app = express();
 
@@ -20,11 +26,20 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
+
+app.use(require('express-session')({
+    secret: 'yui oba',
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -61,11 +76,9 @@ app.use(function(err, req, res, next) {
 //connect to the database
 var pg = require('pg');
 
-pg.connect(process.env.DATABASE_URL+'?ssl=true', function(err, client, done) {
-  if (err)
+pg.connect(process.env.DATABASE_URL+'?ssl=true', function(err, client, done){
+  if(err)
     throw err;
-
-
   console.log('Connected to postgres! Getting schemas...');
 
   /*
@@ -78,7 +91,23 @@ pg.connect(process.env.DATABASE_URL+'?ssl=true', function(err, client, done) {
     
     response.send(result.rows);
   }); */
-}); 
+});
+
+
+var sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: 'postgres',
+  native: true
+});
+
+sequelize.authenticate().then(function (err) {
+  console.log('Connection has been established successfully.');
+}, function (err) { 
+  console.log('Unable to connect to the database:', err);
+});
+
+
+
+
 
 
 
